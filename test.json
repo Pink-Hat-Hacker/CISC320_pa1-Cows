@@ -1,0 +1,182 @@
+{
+    "cow30": {
+        "action": "W", 
+        "cowID": "9", 
+        "value": "1000", 
+        "time": "28"
+    }, 
+    "cow19": {
+        "action": "M", 
+        "cowID": "1", 
+        "value": "2", 
+        "time": "16"
+    }, 
+    "cow18": {
+        "action": "M", 
+        "cowID": "5", 
+        "value": "5", 
+        "time": "15"
+    }, 
+    "cow17": {
+        "action": "W", 
+        "cowID": "1", 
+        "value": "1000", 
+        "time": "1"
+    }, 
+    "cow16": {
+        "action": "M", 
+        "cowID": "5", 
+        "value": "6", 
+        "time": "20"
+    }, 
+    "cow15": {
+        "action": "M", 
+        "cowID": "4", 
+        "value": "7", 
+        "time": "19"
+    }, 
+    "cow14": {
+        "action": "W", 
+        "cowID": "8", 
+        "value": "2000", 
+        "time": "26"
+    }, 
+    "cow13": {
+        "action": "W", 
+        "cowID": "8", 
+        "value": "1500", 
+        "time": "25"
+    }, 
+    "cow12": {
+        "action": "M", 
+        "cowID": "7", 
+        "value": "4", 
+        "time": "24"
+    }, 
+    "cow11": {
+        "action": "M", 
+        "cowID": "9", 
+        "value": "8", 
+        "time": "30"
+    }, 
+    "cow10": {
+        "action": "W", 
+        "cowID": "1", 
+        "value": "2000", 
+        "time": "6"
+    }, 
+    "cow9": {
+        "action": "M", 
+        "cowID": "4", 
+        "value": "5", 
+        "time": "14"
+    }, 
+    "cow8": {
+        "action": "M", 
+        "cowID": "3", 
+        "value": "5", 
+        "time": "13"
+    }, 
+    "cow3": {
+        "action": "W", 
+        "cowID": "7", 
+        "value": "2000", 
+        "time": "22"
+    }, 
+    "cow2": {
+        "action": "M", 
+        "cowID": "3", 
+        "value": "3", 
+        "time": "18"
+    }, 
+    "cow1": {
+        "action": "W", 
+        "cowID": "2", 
+        "value": "2001", 
+        "time": "7"
+    }, 
+    "cow7": {
+        "action": "M", 
+        "cowID": "2", 
+        "value": "5", 
+        "time": "12"
+    }, 
+    "cow6": {
+        "action": "M", 
+        "cowID": "1", 
+        "value": "5", 
+        "time": "11"
+    }, 
+    "cow5": {
+        "action": "W", 
+        "cowID": "9", 
+        "value": "2000", 
+        "time": "29"
+    }, 
+    "cow4": {
+        "action": "M", 
+        "cowID": "7", 
+        "value": "2", 
+        "time": "23"
+    }, 
+    "cow22": {
+        "action": "W", 
+        "cowID": "5", 
+        "value": "2001", 
+        "time": "10"
+    }, 
+    "cow23": {
+        "action": "W", 
+        "cowID": "7", 
+        "value": "1000", 
+        "time": "21"
+    }, 
+    "cow20": {
+        "action": "M", 
+        "cowID": "2", 
+        "value": "4", 
+        "time": "17"
+    }, 
+    "cow21": {
+        "action": "W", 
+        "cowID": "4", 
+        "value": "2000", 
+        "time": "9"
+    }, 
+    "cow26": {
+        "action": "W", 
+        "cowID": "3", 
+        "value": "1500", 
+        "time": "3"
+    }, 
+    "cow27": {
+        "action": "W", 
+        "cowID": "4", 
+        "value": "1001", 
+        "time": "4"
+    }, 
+    "cow24": {
+        "action": "M", 
+        "cowID": "8", 
+        "value": "5", 
+        "time": "27"
+    }, 
+    "cow25": {
+        "action": "W", 
+        "cowID": "2", 
+        "value": "1000", 
+        "time": "2"
+    }, 
+    "cow28": {
+        "action": "W", 
+        "cowID": "5", 
+        "value": "1501", 
+        "time": "5"
+    }, 
+    "cow29": {
+        "action": "W", 
+        "cowID": "3", 
+        "value": "2001", 
+        "time": "8"
+    }
+}
