@@ -24,7 +24,6 @@ with open('test.txt') as data_file:
 
 print(dict)
 '''
-from collections import Counter
 import json
 filename = 'test.txt'
 COWS = {}
