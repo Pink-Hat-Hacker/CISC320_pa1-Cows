@@ -18,7 +18,7 @@ element of the string/list/dicitionary (figure this out later)
 and sort the file
 
 - then we need to check for a "M", "W", or "T"
-
+.split(" ") is a good choice
 '''
 with open('test.txt') as f:
     cows = dict(i.strip().split(None, 1) for i in f)
