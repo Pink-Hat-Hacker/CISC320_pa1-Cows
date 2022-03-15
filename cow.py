@@ -14,8 +14,8 @@ class Cow:
         self.lowW = sys.maxint
         self.avgM = 0
         #needd for calc data
-        self.totalM = 1
-        self.numM = 1
+        self.totalM = 0
+        self.numM = 0
         self.currTime = 0
 
     def __repr__(self):
@@ -25,9 +25,11 @@ class Cow:
     #basically java getters and setters bbc i cant choose a language
     #Milk
     def addNumMilk(self):
-        self.totalM = self.totalM + 1
+        self.numM = self.numM + 1
+        #print(self.numM)
     def setTotalM(self, totalM):
         self.totalM += totalM
+        #print(self.totalM)
     def setAvgM(self):
         self.avgM = self.totalM / self.numM
     
@@ -51,7 +53,7 @@ class Cow:
 filename = 'test.txt'
 
 #cow dictionary
-COWS = {'default':"start"}
+COWS = {}
 #fields
 data = []
 ids = 0
@@ -73,6 +75,7 @@ with open(filename) as f_op:
         action = data[1]
         value = int(data[2])
         time = int(data[3])
+        #print(time)
 
         #check if key is not contained in dict
         if not(getKeys(COWS, ids)):
