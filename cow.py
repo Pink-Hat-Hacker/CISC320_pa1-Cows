@@ -2,6 +2,7 @@
 # CISC320 - SP2022
 # Cow! Algo Problem
 
+from operator import itemgetter, attrgetter, methodcaller
 import sys
 
 class Cow:
@@ -20,7 +21,9 @@ class Cow:
 
     def __repr__(self):
         #return "[CowID: %s, LowestW: %s, LatestW: %s, AvgM: %s]" % (self.cowid, self.lowW, self.lateW, self.avgM)
-        return "[%s, %s, %s, %s]" % (self.cowid, self.lowW, self.lateW, self.avgM)
+        #return "[%s, %s, %s, %s]" % (self.cowid, self.lowW, self.lateW, self.avgM)
+        #return '{' + self.cowid, self.lowW, self.lateW, self.avgM + '}'
+        return repr((self.cowid, self.lowW, self.lateW, self.avgM))
     
     #basically java getters and setters bbc i cant choose a language
     #Milk
@@ -46,6 +49,8 @@ class Cow:
         return self.lowW
     def setLowestW(self, lowW):
         self.lowW = lowW
+    def getLatestW(self):
+        return self.lateW
     #ig i need a getID key thing bc i cant figure this out!!!
     def getID(self):
         return self.id
@@ -95,4 +100,19 @@ with open(filename) as f_op:
 
 #sorting O(nlog(n))
 
+mult_list_COWS = list()
+for c in COWS:
+    if (COWS[c].getLatestW()) != 0 and (COWS[c].getLowestW() != 0):
+        mult_list_COWS.append(COWS[c])
+        #print(c)
+
+sorted_list_COWS = sorted(mult_list_COWS, key=attrgetter('lowW', 'lateW', 'avgM'))
+
+#for loop to interate through dictionary
+    #conditional to check if getlatestW and getLowestW is 0
+        #add to list if not
+
+#print(sorted_list_COWS[0].lowW)
+print(sorted_list_COWS)
+print("\n")
 print(COWS)
