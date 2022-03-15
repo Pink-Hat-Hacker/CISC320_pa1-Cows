@@ -2,49 +2,119 @@
 # CISC320 - SP2022
 # Cow! Algo Problem
 
-'''
-ok lets think about this:
-- the last element is the time stamp 
---- we can use this are the sorting "key"
---- use an integrated sorting algo to take the last 
-element of the string/list/dicitionary (figure this out later)
-and sort the file
+from operator import itemgetter, attrgetter, methodcaller
+import sys
 
-- then we need to check for a "M", "W", or "T"
-.split(" ") is a good choice
+class Cow:
+    #ids, lateW, lowW, avgM, totalM, numM, currTime = 0
 
-with open('test.txt') as f:
-    cows = dict(i.strip().split(None, 1) for i in f)
-print(cows)
-dict = {}
-with open('test.txt') as data_file:
-    for line in data_file:
-        (key, action, value, time) = line.split(" ")
-        dict[int(key)] = value
+    def __init__(self, ids):
+        #needs to be output
+        self.cowid = ids
+        self.lateW = 0
+        self.lowW = sys.maxint
+        self.avgM = 0
+        #needd for calc data
+        self.totalM = 0
+        self.numM = 0
+        self.currTime = 0
 
-print(dict)
-'''
-import json
+    def __repr__(self):
+        #return "[CowID: %s, LowestW: %s, LatestW: %s, AvgM: %s]" % (self.cowid, self.lowW, self.lateW, self.avgM)
+        #return "[%s, %s, %s, %s]" % (self.cowid, self.lowW, self.lateW, self.avgM)
+        #return '{' + self.cowid, self.lowW, self.lateW, self.avgM + '}'
+        return repr((self.cowid, self.lowW, self.lateW, self.avgM))
+    
+    #basically java getters and setters bbc i cant choose a language
+    #Milk
+    def addNumMilk(self):
+        self.numM = self.numM + 1
+        #print(self.numM)
+    def setTotalM(self, totalM):
+        self.totalM += totalM
+        #print(self.totalM)
+    def setAvgM(self):
+        self.avgM = self.totalM / self.numM
+    
+    #Time
+    def getLatestTime(self):
+        return self.currTime
+    def setTimeLatest(self, currTime):
+        self.currTime = currTime
+
+    #Weight
+    def setLatestW(self, lateW):
+        self.lateW = lateW
+    def getLowestW(self):
+        return self.lowW
+    def setLowestW(self, lowW):
+        self.lowW = lowW
+    def getLatestW(self):
+        return self.lateW
+    #ig i need a getID key thing bc i cant figure this out!!!
+    def getID(self):
+        return self.id
+
 filename = 'test.txt'
+
+#cow dictionary
 COWS = {}
-fields = ['cowID', 'action', 'value', 'time']
+#fields
+data = []
+ids = 0
+action = ""
+value = 0
+time = 0
+count = 0
+def getKeys(dict, key):
+    if key in dict.keys():
+        return True
+    return False
 
 with open(filename) as f_op:
-    count = 1
+    #loop through file and getID each line of data 
     for line in f_op:
-        description = list(line.strip().split(None, 4))
-        print(description)
-        sno = 'cow'+str(count)
-        i = 0
-        dict1 = {}
-        while i<len(fields):
-            dict1[fields[i]] = description[i]
-            i = i + 1
-        COWS[sno] = dict1
-        count = count + 1
-        #command, description = line.strip().split(None, 1)
-        #COWS[command] = description.strip()
+        #data of each line 
+        data = list(line.strip().split(None, 4))
+        ids = int(data[0])
+        action = data[1]
+        value = int(data[2])
+        time = int(data[3])
+        #print(time)
 
-out_file = open("test.json", "w")
-json.dump(COWS, out_file, indent = 4, sort_keys = False)
-out_file.close()
+        #check if key is not contained in dict
+        if not(getKeys(COWS, ids)):
+            COWS[ids] = Cow(ids)
+            #print(COWS[ids])
+        if action == "M":
+            COWS[ids].addNumMilk()
+            COWS[ids].setTotalM(value)
+            COWS[ids].setAvgM()
+        elif action == "W":
+            if time > COWS[ids].getLatestTime():
+                COWS[ids].setTimeLatest(time)
+                COWS[ids].setLatestW(value)
+            if value < COWS[ids].getLowestW():
+                COWS[ids].setLowestW(value)
+#make sure to close the file!!!
+
+#sorting O(nlog(n))
+
+mult_list_COWS = list()
+for c in COWS:
+    if (COWS[c].getLatestW()) != 0 and (COWS[c].getLowestW() != 0):
+        mult_list_COWS.append(COWS[c])
+        #print(c)
+
+sorted_list_COWS = sorted(mult_list_COWS, key=attrgetter('lowW', 'lateW', 'avgM'))
+
+#for loop to interate through dictionary
+    #conditional to check if getlatestW and getLowestW is 0
+        #add to list if not
+
+#print(sorted_list_COWS[0].lowW)
+for cowdata in sorted_list_COWS:
+    print(cowdata)
+    #print("\n")
+#print("\n")
+#print(COWS)
