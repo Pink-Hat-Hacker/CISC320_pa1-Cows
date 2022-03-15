@@ -113,6 +113,8 @@ sorted_list_COWS = sorted(mult_list_COWS, key=attrgetter('lowW', 'lateW', 'avgM'
         #add to list if not
 
 #print(sorted_list_COWS[0].lowW)
-print(sorted_list_COWS)
-print("\n")
-print(COWS)
+for cowdata in sorted_list_COWS:
+    print(cowdata)
+    print("\n")
+#print("\n")
+#print(COWS)
