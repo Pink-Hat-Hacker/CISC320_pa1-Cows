@@ -14,13 +14,26 @@ Explaination:
     This is all stored in a list and printed out using a for loop. This is not
     necessary, however, it does look better than a list of lists.
 
+    So breakdown:
+    - Adding to dictionary
+        - O(r)
+    - For loop to deal with 0 Milkings or weights
+        - O(r) [aka(O(n))]
+    - Sorting
+        - O(c log (c)) [(aka) O(n log (n))]
+    - Printing
+        - O(r)
+    - TOTAL = O(c log(c)) + 3 * O(r) -> [ignore constants] O(c log(c)) + O(r) -> 
+        O(c log(c) + r)
+    
+
 please ignore "test.json"
 
 
 Collaborators:
     Worked with and advised:
-    - akumar@udel.edu
-    - aeshak@udel.edu
+    - akumar@udel.edu / Iclyn
+    - aeshak@udel.edu / Aesha
     Much of their code may look like mine due to working together
     and me helping them get started. Dictionaries was how I planned to solve
     this and that is how I was able to help them.
