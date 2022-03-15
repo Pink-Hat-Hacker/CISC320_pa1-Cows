@@ -91,4 +91,8 @@ with open(filename) as f_op:
                 COWS[ids].setLatestW(value)
             if value < COWS[ids].getLowestW():
                 COWS[ids].setLowestW(value)
+#make sure to close the file!!!
+
+#sorting O(nlog(n))
+
 print(COWS)
