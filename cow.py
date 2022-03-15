@@ -19,8 +19,8 @@ class Cow:
         self.currTime = 0
 
     def __repr__(self):
-        #return "[CowID: %s, LatestW: %s, LowestW: %s, AvgM: %s]" % (self.cowid, self.lateW, self.lowW, self.avgM)
-        return "[%s, %s, %s, %s]" % (self.cowid, self.lateW, self.lowW, self.avgM)
+        #return "[CowID: %s, LowestW: %s, LatestW: %s, AvgM: %s]" % (self.cowid, self.lowW, self.lateW, self.avgM)
+        return "[%s, %s, %s, %s]" % (self.cowid, self.lowW, self.lateW, self.avgM)
     
     #basically java getters and setters bbc i cant choose a language
     #Milk
